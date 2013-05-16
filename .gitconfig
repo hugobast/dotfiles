@@ -1,0 +1,14 @@
+[user]
+	name = Hugo Bastien
+	email = hugobast@gmail.com
+[color]
+  ul = auto
+[alias]
+  l = "!source ~/.githelpers && pretty_git_log"
+  aa = add --all
+  ci = commit
+  b = branch
+[merge]
+    tool = vimdiff
+[core]
+	excludesfile = /Users/hugobastien/.gitignore_global
