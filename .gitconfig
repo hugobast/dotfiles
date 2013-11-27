@@ -10,6 +10,8 @@
   aa = add --all
   ci = commit
   b = branch
+  co = checkout
+  s = status
 [merge]
   tool = vimdiff
 [core]

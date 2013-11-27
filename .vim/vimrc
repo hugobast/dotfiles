@@ -11,7 +11,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'tpope/vim-fugitive'
@@ -86,11 +86,11 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-syntax on 
+syntax on
 
 " Colors
 set background=dark
-colorscheme ir_black 
+colorscheme ir_black
 set cursorline
 hi PmenuSel       cterm=none term=none ctermbg=234
 hi CursorLine     cterm=none term=none ctermbg=234
