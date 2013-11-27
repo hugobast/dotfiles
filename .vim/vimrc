@@ -3,11 +3,48 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
-call pathogen#infect()
-syntax on                         " Turn on syntax highlighting
-filetype plugin indent on         " Turn on file type detection.
+" call pathogen#infect()
+
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-surround'
+Bundle 'bling/vim-airline'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'twerth/ir_black'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install (update) bundles
+" :BundleSearch(!) foo - search (or refresh cache first) for foo
+" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle commands are not allowed.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
+
+" Enable per folder .vimrc
+
+set exrc                          " Enable per-directory .vimrc files
+set secure                        " Disable unsafe commands in local .vimrc files
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -49,9 +86,31 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" Or use vividchalk
+syntax on 
+
+" Colors
 set background=dark
-colorscheme grb256 
+colorscheme ir_black 
+set cursorline
+hi PmenuSel       cterm=none term=none ctermbg=234
+hi CursorLine     cterm=none term=none ctermbg=234
+hi SignColumn     cterm=none term=none ctermbg=16
+
+" Airline
+let g:airline_powerline_fonts = 1
+
+" Neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
+" NERDTree
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -67,6 +126,7 @@ map <leader>a call:tablast<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>r :!nosetests --rednose .<cr>
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
@@ -100,8 +160,7 @@ function! SetTestFile()
   let t:grb_test_file=@%
 endfunction
 
-function! RunTests(filename)
-  " Write the file and run tests for the given filename
+function! ClearScreen()
   :w
   :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
   :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
@@ -109,6 +168,11 @@ function! RunTests(filename)
   :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
   :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
   :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+endfunction
+
+function! RunTests(filename)
+  " Write the file and run tests for the given filename
+  call ClearScreen()
   let file_type = &filetype
   if file_type == 'python'
     exec ":!py.test " . a:filename
