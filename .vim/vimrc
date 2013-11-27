@@ -96,6 +96,12 @@ hi PmenuSel       cterm=none term=none ctermbg=234
 hi CursorLine     cterm=none term=none ctermbg=234
 hi SignColumn     cterm=none term=none ctermbg=16
 
+hi Function            ctermfg=lightred
+hi rubyRegexp          ctermfg=lightred
+hi rubyRegexpDelimiter ctermfg=lightred
+
+"  guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=lightred    ctermbg=NONE        cterm=NONE
+
 " Airline
 let g:airline_powerline_fonts = 1
 
