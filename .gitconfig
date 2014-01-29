@@ -1,6 +1,6 @@
 [user]
-  name = Hugo Bastien
-  email = hugobast@gmail.com
+	name = Hugo Bastien
+	email = hugobast@gmail.com
 [color]
   ul = auto
   ui = true
@@ -17,3 +17,5 @@
 [core]
   excludesfile = /Users/hugobastien/.gitignore_global
   editor = vim
+[mergetool]
+	keepBackup = true

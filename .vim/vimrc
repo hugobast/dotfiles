@@ -27,6 +27,7 @@ Bundle 'Shougo/neocomplcache.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'jnwhiteh/vim-golang.git'
 
 filetype plugin indent on     " required!
 "
