@@ -28,6 +28,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'jnwhiteh/vim-golang.git'
+Bundle 'elzr/vim-json.git'
 
 filetype plugin indent on     " required!
 "
