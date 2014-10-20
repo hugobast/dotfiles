@@ -1,6 +1,6 @@
 [user]
-	name = Hugo Bastien
-	email = hugobast@gmail.com
+  name = Hugo Bastien
+  email = hugobast@gmail.com
 [color]
   ul = auto
   ui = true
@@ -12,10 +12,18 @@
   b = branch
   co = checkout
   s = status
+  uncommit = reset --soft HEAD^
 [merge]
   tool = vimdiff
 [core]
-  excludesfile = /Users/hugobastien/.gitignore_global
+  excludesfile = /opt/boxen/config/git/gitignore
   editor = vim
 [mergetool]
-	keepBackup = true
+  keepBackup = true
+[hub]
+  protocol = https
+[credential]
+  helper = /opt/boxen/bin/boxen-git-credential
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
