@@ -8,7 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="agnoster"
 # ZSH_THEME="norm"
 # ZSH_THEME="cloud"
-ZSH_THEME="ys"
+# ZSH_THEME="nanotech"
+ZSH_THEME="avit"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -48,23 +49,26 @@ ZSH_THEME="ys"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast rbenv rake colored-man zsh-syntax-highlighting python)
+plugins=(gitfast rake colored-man zsh-syntax-highlighting python)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
-eval "$(rbenv init -)"
+
+# nimrod's nimble bin path
+
+export PATH="/Users/hugobastien/.nimble/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/.go/bin:$PATH"
-export GOPATH="$HOME/.go"
+export PATH="$HOME/go/bin:$PATH"
+export GOPATH="$HOME/go"
 export DOCKER_HOST=tcp://
 
-. $HOME/.bash_aliases
+source $HOME/.bash_aliases
+source /opt/boxen/env.sh
 
 ## startup virtualenv-burrito
 if [ -f $HOME/.venvburrito/startup.sh ]; then
@@ -78,10 +82,32 @@ export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
+#
+# Cargo bins
+
+export PATH="/Users/hugobastien/.cargo/bin:$PATH"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+#
+
+# ✩✩✩✩ PHP ✩✩✩✩
+#
+# If you wish to swap the PHP you use on the command line, you should add the following to ~/.bashrc,
+# ~/.zshrc, ~/.profile or your shell's equivalent configuration file:
+#
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+export PATH="/opt/boxen/homebrew/sbin:$PATH"
+
+# Direnv
+eval "$(direnv hook zsh)"
+
+# Python
+export WORKON_HOME=~/src
+export VIRTUALENVWRAPPER_PYTHON=/opt/boxen/homebrew/bin/python3
+source /opt/boxen/homebrew/bin/virtualenvwrapper.sh
+
 

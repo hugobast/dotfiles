@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/hugobastien/Dropbox/exercises/python/bob'
-let g:netrw_dirhist_2='/Users/hugobastien/Dropbox/exercises/elixir/word-count'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/hugobastien/src/zweet_ionic'
+let g:netrw_dirhist_2='/Users/hugobastien/src/aday'
+let g:netrw_dirhist_3='/Users/hugobastien/src/glossier-v2'
+let g:netrw_dirhist_4='/Users/hugobastien/src/lola'
+let g:netrw_dirhist_5='/Users/hugobastien/src/lola/app/assets/javascripts/sprangular/directives/lola'
+let g:netrw_dirhist_6='/Users/hugobastien/src/lola'

@@ -2,44 +2,52 @@
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
 set nocompatible                  " Must come first because it changes other options.
+set t_Co=256
 
 " call pathogen#infect()
 
 filetype off                  " required!
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
+set rnu
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-surround'
-Bundle 'bling/vim-airline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'twerth/ir_black'
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'jnwhiteh/vim-golang.git'
-Bundle 'elzr/vim-json.git'
+Plugin 'gmarik/vundle'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'twerth/ir_black'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'jnwhiteh/vim-golang.git'
+Plugin 'elzr/vim-json.git'
+Plugin 'zah/nimrod.vim'
+Plugin 'noahfrederick/vim-hemisu'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'valloric/youcompleteme'
+
+
+call vundle#end()
 
 filetype plugin indent on     " required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install (update) bundles
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.
+" NOTE: comments after Plugin commands are not allowed.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
 
@@ -63,6 +71,7 @@ set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
 set number                        " Show line numbers.
+set relativenumber                " Show relative line number
 set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
@@ -92,11 +101,12 @@ syntax on
 
 " Colors
 set background=dark
-colorscheme ir_black
 set cursorline
-hi PmenuSel       cterm=none term=none ctermbg=234
-hi CursorLine     cterm=none term=none ctermbg=234
-hi SignColumn     cterm=none term=none ctermbg=16
+" hi PmenuSel       cterm=none term=none ctermbg=234
+" hi CursorLine     cterm=none term=none ctermbg=234
+" hi SignColumn     cterm=none term=none ctermbg=16
+
+
 
 hi Function            ctermfg=lightred
 hi rubyRegexp          ctermfg=lightred
@@ -104,21 +114,15 @@ hi rubyRegexpDelimiter ctermfg=lightred
 
 "  guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=lightred    ctermbg=NONE        cterm=NONE
 
+" CtrlP
+
+let g:ctrlp_max_files=0
+
 " Airline
 let g:airline_powerline_fonts = 1
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
-
-" NERDTree
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=1
-let NERDTreeMouseMode=2
-let NERDTreeShowHidden=1
-let NERDTreeKeepTreeInNewTab=1
-let g:nerdtree_tabs_open_on_gui_startup=0
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>

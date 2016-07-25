@@ -13,10 +13,11 @@
   co = checkout
   s = status
   uncommit = reset --soft HEAD^
+  fa = fetch --all
 [merge]
   tool = vimdiff
 [core]
-  excludesfile = /opt/boxen/config/git/gitignore
+	excludesfile = /opt/boxen/config/git/gitignore
   editor = vim
 [mergetool]
   keepBackup = true
@@ -25,5 +26,11 @@
 [credential]
   helper = /opt/boxen/bin/boxen-git-credential
 [filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
