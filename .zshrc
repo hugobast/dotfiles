@@ -65,7 +65,6 @@ export PATH="/Users/hugobastien/.nimble/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export GOPATH="$HOME/go"
-export DOCKER_HOST=tcp://
 
 source $HOME/.bash_aliases
 source /opt/boxen/env.sh
@@ -106,8 +105,10 @@ export PATH="/opt/boxen/homebrew/sbin:$PATH"
 eval "$(direnv hook zsh)"
 
 # Python
-export WORKON_HOME=~/src
 export VIRTUALENVWRAPPER_PYTHON=/opt/boxen/homebrew/bin/python3
 source /opt/boxen/homebrew/bin/virtualenvwrapper.sh
 
 
+
+# added by travis gem
+[ -f /Users/hugobastien/.travis/travis.sh ] && source /Users/hugobastien/.travis/travis.sh

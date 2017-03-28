@@ -1,8 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/hugobastien/src/zweet_ionic'
-let g:netrw_dirhist_2='/Users/hugobastien/src/aday'
-let g:netrw_dirhist_3='/Users/hugobastien/src/glossier-v2'
-let g:netrw_dirhist_4='/Users/hugobastien/src/lola'
-let g:netrw_dirhist_5='/Users/hugobastien/src/lola/app/assets/javascripts/sprangular/directives/lola'
-let g:netrw_dirhist_6='/Users/hugobastien/src/lola'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/hugobastien/src/veri-ios/script'
+let g:netrw_dirhist_2='/Users/hugobastien/src/lola/spec/services/feature'
+let g:netrw_dirhist_3='/Users/hugobastien/src/lola/.bundle/gems/gpgme-2.0.11'
+let g:netrw_dirhist_4='/Users/hugobastien'
+let g:netrw_dirhist_5='/Users/hugobastien/.virtualenvs'

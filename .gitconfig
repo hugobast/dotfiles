@@ -5,6 +5,7 @@
   ul = auto
   ui = true
 [alias]
+  test = !ls /Users/$(whoami)
   l = "!source ~/.githelpers && pretty_git_log"
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   aa = add --all
